@@ -1,5 +1,7 @@
 import os
 import pickle
+from bidi.algorithm import get_display
+
 
 import tkinter as tk
 from tkinter import messagebox
@@ -17,7 +19,7 @@ def get_button(window, text, color, command, fg='white'):
                         command=command,
                         height=2,
                         width=20,
-                        font=('Helvetica bold', 20)
+                        font=('2  Nazanin', 20)
                     )
 
     return button
@@ -31,14 +33,14 @@ def get_img_label(window):
 
 def get_text_label(window, text):
     label = tk.Label(window, text=text)
-    label.config(font=("sans-serif", 21), justify="left")
+    label.config(font=("2  Nazanin", 22), justify="right")
     return label
 
 
 def get_entry_text(window):
     inputtxt = tk.Text(window,
                        height=2,
-                       width=15, font=("Arial", 32))
+                       width=15, font=("2  Nazanin", 32))
     return inputtxt
 
 
