@@ -90,7 +90,7 @@ class App:
         self.add_img_to_label(self.capture_label)
 
         self.entry_text_register_new_user = util.get_entry_text(self.register_new_user_window)
-        self.entry_text_register_new_user.place(x=750, y=150)
+        self.entry_text_register_new_user.place(x=780, y=130)
 
         self.text_label_register_new_user = util.get_text_label(self.register_new_user_window, 'لطفا نام کاربری را وارد نمایید')
         self.text_label_register_new_user.place(x=870, y=70)
