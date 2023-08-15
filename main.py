@@ -1,22 +1,19 @@
 import os.path
 import datetime
-import pickle
 import subprocess
 from bidi.algorithm import get_display
 
 import tkinter as tk
 import cv2
 from PIL import Image, ImageTk
-import face_recognition
-
 import util
-import test
 
 
 class App:
     def __init__(self):
         self.main_window = tk.Tk()
         self.main_window.geometry("1200x520+350+100")
+        self.main_window.title("سیستم ورود با تشخیص چهره")
 
         self.login_button_main_window = util.get_button(self.main_window, 'ورود', 'green', self.login)
         self.login_button_main_window.place(x=750, y=290)
@@ -64,7 +61,7 @@ class App:
         name = output.split(',')[1][:-3]
 
         if name in ['unknown_person\\r', 'no_persons_found\\r']:
-            util.msg_box('آخی', 'کاربر پیدا نشد. لطفا کاربر جدید بسازید یا دوباره تلاش کنید')
+            util.msg_box('ای وای', 'کاربر پیدا نشد. لطفا کاربر جدید بسازید یا دوباره تلاش کنید')
         else:
             util.msg_box('خوش آمدید', 'خوش آمدی {}.'.format(name))
             with open(self.log_path, 'a') as f:
